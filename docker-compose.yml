@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  url_encoder:
+    build:
+      context: ./Url_encoder
+    container_name: url_encoder_app
+    ports:
+      - "8001:80"
+
+  base64_encoder:
+    build:
+      context: ./Base64_encoder
+    container_name: base64_encoder_app
+    ports:
+      - "8002:80"
+
+  message_digester:
+    build:
+      context: ./Message_digester
+    container_name: message_digester_app
+    ports:
+      - "8003:80"

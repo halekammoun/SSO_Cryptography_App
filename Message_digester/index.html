@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Digester</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Message Digester</h1>
+  <p>Copy-paste the string here:</p>
+  <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+  <p>Select Digest Algorithm:</p>
+  <select id="algorithm">
+    <option value="SHA-1">SHA-1</option>
+    <option value="SHA-224">SHA-224</option>
+    <option value="SHA-256">SHA-256</option>
+    <option value="SHA-384">SHA-384</option>
+    <option value="SHA-512">SHA-512</option>
+    <option value="MD5">MD5</option>
+  </select>
+
+  <button onclick="computeDigest()">Compute Digest</button>
+
+  <div id="outputText" class="result" placeholder="Your result will appear here..."></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
