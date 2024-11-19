@@ -1,35 +1,39 @@
-version: '3.8'
-
 services:
   app1:
     build:
-      context: ./App1
+      context: ./app1
       dockerfile: Dockerfile
     ports:
       - "3001:3000"
-    volumes:
-      - ./App1:/home/app
+    env_file:
+      - ./app1/.env
+    # volumes:
+    #   - ./app1:/home/app
     environment:
-      - DJANGO_SETTINGS_MODULE=App1.settings
+      - DJANGO_SETTINGS_MODULE=webappexample.settings
 
   app2:
     build:
-      context: ./App2
+      context: ./app2
       dockerfile: Dockerfile
     ports:
       - "3002:3000"
-    volumes:
-      - ./App2:/home/app
+    env_file:
+      - ./app2/.env
+    # volumes:
+    #   - ./app2:/home/app
     environment:
-      - DJANGO_SETTINGS_MODULE=App2.settings
+      - DJANGO_SETTINGS_MODULE=webappexample.settings
 
   app3:
     build:
-      context: ./App3
+      context: ./app3
       dockerfile: Dockerfile
     ports:
       - "3003:3000"
-    volumes:
-      - ./App3:/home/app
+    env_file:
+      - ./app3/.env
+    # volumes:
+    #   - ./app3:/home/app
     environment:
-      - DJANGO_SETTINGS_MODULE=App3.settings
+      - DJANGO_SETTINGS_MODULE=webappexample.settings
