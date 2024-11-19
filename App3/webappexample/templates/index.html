@@ -4,12 +4,13 @@
     <title>Auth0 Example</title>
   </head>
   <body>
+    <h1>App 3</h1>
     {% if session %}
-    <h1>Welcome {{session.userinfo.name}}!</h1>
+    <h2>Welcome {{session.userinfo.name}}!</h2>
     <p><a href="{% url 'logout' %}" id="qsLogoutBtn">Logout</a></p>
     <div><pre>{{pretty}}</pre></div>
     {% else %}
-    <h1 id="profileDropDown">Welcome Guest</h1>
+    <h2 id="profileDropDown">Welcome Guest</h2>
     <p><a href="{% url 'login' %}" id="qsLoginBtn">Login</a></p>
     {% endif %}
   </body>
