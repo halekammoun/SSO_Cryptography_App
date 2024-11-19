@@ -1,23 +1,35 @@
 version: '3.8'
 
 services:
-  url_encoder:
+  app1:
     build:
-      context: ./Url_encoder
-    container_name: url_encoder_app
+      context: ./App1
+      dockerfile: Dockerfile
     ports:
-      - "8001:80"
+      - "3001:3000"
+    volumes:
+      - ./App1:/home/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=App1.settings
 
-  base64_encoder:
+  app2:
     build:
-      context: ./Base64_encoder
-    container_name: base64_encoder_app
+      context: ./App2
+      dockerfile: Dockerfile
     ports:
-      - "8002:80"
+      - "3002:3000"
+    volumes:
+      - ./App2:/home/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=App2.settings
 
-  message_digester:
+  app3:
     build:
-      context: ./Message_digester
-    container_name: message_digester_app
+      context: ./App3
+      dockerfile: Dockerfile
     ports:
-      - "8003:80"
+      - "3003:3000"
+    volumes:
+      - ./App3:/home/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=App3.settings
